@@ -1,0 +1,23 @@
+{
+    "name": "todo_testovoe_backend",
+    "packageManager": "yarn@3.6.3",
+    "version": "1.0.0",
+    "description": "rest API for todo",
+    "main": "index.js",
+    "type": "module",
+    "scripts": {
+        "start": "nodemon index.js"
+    },
+    "author": "Igor Anufriev",
+    "license": "MIT",
+    "dependencies": {
+        "cookie-parser": "^1.4.6",
+        "cors": "^2.8.5",
+        "dotenv": "^16.3.1",
+        "express": "^4.18.2",
+        "express-fileupload": "^1.4.0",
+        "mongoose": "^7.5.2",
+        "nodemon": "^3.0.1",
+        "uuid": "^9.0.1"
+    }
+}
