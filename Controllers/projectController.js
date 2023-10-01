@@ -34,11 +34,13 @@ class ProjectController {
     try {
       const {
         _id,
-        project_name
+        project_name,
+        creator
       } = req.body
       const updated_project = await projectService.updateProject({
         _id,
-        project_name
+        project_name,
+        creator
       })
       return res.status(200).json(updated_project)
     } catch (e) {

@@ -24,13 +24,15 @@ class ProjectService {
 
   async updateProject({
     _id,
-    project_name
+    project_name,
+    creator
   }) {
     if (!_id) {
       throw new Error(`Project not founded`);
     }
     const updated_project = await projectSchema.findByIdAndUpdate(_id, {
-      project_name
+      project_name,
+      creator
     }, {
       new: true
     })

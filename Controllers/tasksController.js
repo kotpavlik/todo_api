@@ -1,6 +1,15 @@
 import taskService from '../Service/taskService.js'
 
 class TaskController {
+
+  async getAllTasks(req, res) {
+    const {
+      proj_id
+    } = req.params
+    const all_tasks = await taskService.getAllTasks(proj_id);
+    return res.status(200).json(all_tasks)
+  }
+
   async createTask(req, res) {
     const {
       proj_id
@@ -13,7 +22,10 @@ class TaskController {
     const {
       proj_id
     } = req.params
-    const deleted_task = await taskService.removeTask(proj_id, req.body)
+    const {
+      task_id
+    } = req.body
+    const deleted_task = await taskService.removeTask(proj_id, task_id)
     return res.status(200).json(deleted_task)
   }
 }
