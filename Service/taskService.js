@@ -22,6 +22,8 @@ class taskService {
     return tasks_of_proj
   }
 
+
+
   async createTask(proj_id, task_data) {
     const find_project = await projectSchema.findById(proj_id)
     if (!find_project._id) {
@@ -55,10 +57,18 @@ class taskService {
     }, {
       new: true
     })
-
     const deleted_task = await taskSchema.findByIdAndDelete(task_id)
-
     return deleted_task
+  }
+
+  async updateTask(task_data) {
+    if (!task_data._id) {
+      throw new Error(`We can't find this task`)
+    }
+    const updatedTask = taskSchema.findByIdAndUpdate(task_data._id, task_data, {
+      new: true
+    })
+    return updatedTask
   }
 }
 

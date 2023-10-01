@@ -15,10 +15,6 @@ const tasksSchema = new mongoose.Schema({
     default: Date.now,
     required: true
   },
-  date_in_work: {
-    type: Date,
-    default: 0
-  },
   date_end: {
     type: Date,
     default: 0
