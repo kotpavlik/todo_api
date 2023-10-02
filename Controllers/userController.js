@@ -6,7 +6,7 @@ class userController {
       const all_users = await UserService.getUsrs()
       return res.status(200).json(all_users)
     } catch (e) {
-      res.status(500).json(`Error: ${e}`)
+      res.status(500).json(`Error is here: ${e}`)
     }
   }
   async addUser(req, res) {
