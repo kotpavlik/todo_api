@@ -23,9 +23,10 @@ class reqFilter {
   filtercommentFields(req, res, next) {
     const allowedFields = [
       'text',
-      '_id',
+      'task_id',
       'author',
-      'replies',
+      'replise',
+      '_id'
     ];
     for (const field in req.body) {
       if (!allowedFields.includes(field)) {

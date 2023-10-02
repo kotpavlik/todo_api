@@ -28,6 +28,7 @@ router.put('/:proj_id/tasks', reqFilter.filterTaskFields, taskController.updateT
 router.delete('/:proj_id/tasks', taskController.removeTask)
 
 router.post('/:proj_id/tasks/comment', reqFilter.filtercommentFields, commentsController.createComment)
+router.get('/:proj_id/tasks/comment', commentsController.addAllComments)
 router.delete('/:proj_id/tasks/comment', commentsController.removeComment)
 
 
