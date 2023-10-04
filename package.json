@@ -4,6 +4,9 @@
     "version": "1.0.0",
     "description": "rest API for todo",
     "main": "index.js",
+    "engines": {
+        "node": "18.17.1"
+    },
     "type": "module",
     "scripts": {
         "start": "node index.js"
