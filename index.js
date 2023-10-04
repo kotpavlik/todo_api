@@ -8,8 +8,8 @@ import path from 'path'
 import todo_routes from './routes/todo_routes.js'
 
 dotenv.config()
-const PORT = 8080 || process.env.PORT
 const app = express()
+const PORT = 8080 || process.env.PORT
 
 app.use(cors({
   origin: ["http://localhost:3000"],
