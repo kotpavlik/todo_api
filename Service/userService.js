@@ -7,9 +7,6 @@ class UserService {
     return all_users
   }
   async addUser(username) {
-    if (username.lenght <= 1) {
-      throw new Error(`this username is really short`)
-    }
     const new_user = await userSchema.create(username);
     return new_user
   }
