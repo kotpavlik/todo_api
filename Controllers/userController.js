@@ -11,9 +11,7 @@ class userController {
   }
   async addUser(req, res) {
     try {
-      if (req.username.lenght <= 1) {
-        return res.status(400).json('username length a really short')
-      }
+      console.log(req.body)
       const new_user = await UserService.addUser(req.body)
       return res.status(200).json(new_user)
     } catch (e) {

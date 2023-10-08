@@ -2,11 +2,16 @@ import userSchema from "../model/userSchema.js"
 
 
 class UserService {
+
   async getUsrs() {
     const all_users = await userSchema.find();
     return all_users
   }
+
   async addUser(username) {
+    if (username.username && username.username.trim().length === 0) {
+      throw new Error('Please wright username.Your username empty')
+    }
     const new_user = await userSchema.create(username);
     return new_user
   }
