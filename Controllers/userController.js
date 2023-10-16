@@ -11,7 +11,6 @@ class userController {
   }
   async addUser(req, res) {
     try {
-      console.log(req.body)
       const new_user = await UserService.addUser(req.body)
       return res.status(200).json(new_user)
     } catch (e) {
@@ -37,6 +36,18 @@ class userController {
       res.status(500).json(`Error: ${e}`)
     }
   }
+
+  // async getAllUserTasks(req, res) {
+  //   try {
+  //     const {
+  //       user_id
+  //     } = req.query
+  //     const myDesks = await UserService.getMyDesks(user_id)
+  //     return res.status(200).json(myDesks)
+  //   } catch (e) {
+  //     res.status(500).json(`Error: ${e}`)
+  //   }
+  // }
 }
 
 export default new userController();

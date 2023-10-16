@@ -50,7 +50,10 @@ class ProjectController {
 
   async removeProject(req, res) {
     try {
-      const removed_project = await projectService.removeProject(req.body.project_id)
+      const {
+        desk_id
+      } = req.query
+      const removed_project = await projectService.removeProject(desk_id)
       return res.status(200).json(removed_project)
     } catch (e) {
       res.status(500).json(`Error: ${e}`)

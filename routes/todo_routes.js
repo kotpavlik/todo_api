@@ -15,6 +15,7 @@ router.get('/user', userController.getUsers);
 router.post('/user', userController.addUser);
 router.put('/user', userController.updateUser);
 router.delete('/user', userController.deleteUser);
+// router.get('/user/:user_id', userController.getAllUserTasks)
 
 router.get('/', projectController.getProjects);
 router.get('/:proj_id', projectController.getOneProject)
