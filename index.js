@@ -12,7 +12,7 @@ const app = express()
 const PORT = 8080 || process.env.PORT
 
 app.use(cors({
-  origin: ["http://localhost:3000"],
+  origin: ["http://localhost:3000", "https://kotpavlik.github.io"],
   credentials: true
 }))
 
